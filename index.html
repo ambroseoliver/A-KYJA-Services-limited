@@ -49,6 +49,9 @@
       content="https://www.a-kyjaservices.com/images/preview.jpg"
     />
 
+    <!-- Favicon -->
+    <link rel="icon" href="assets/Company logo.jpg" type="image/x-icon" />
+
     <!-- Structured Data (Schema.org for SEO) -->
     <script type="application/ld+json">
       {
@@ -133,15 +136,63 @@
   </head>
 
   <body>
-    <!-- Example Animated Heading -->
-    <h1 class="wow animate__fadeInDown text-center mt-5">
-      Welcome to A-kyja Services Ltd
-    </h1>
+    <!-- Navbar  -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="" alt="A-kyja Services Ltd" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-mdb-toggle="collapse"
+          data-mdb-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#properties">Properties</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-    <!-- Example Button with Hover Effect -->
-    <div class="text-center">
-      <a href="#" class="btn btn-primary hvr-bounce-to-right">Get Started</a>
-    </div>
+    <!-- Home Section -->
+    <section id="home" class="home">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <h1 class="display-1">Welcome to A-kyja Services Ltd</h1>
+            <p class="lead">
+              Your trusted partner for all your real estate needs. Buy, sell, or
+              rent properties with ease.
+            </p>
+            <a href="#about" class="btn btn-primary">Learn More</a>
+          </div>
+          <div class="col-lg-6">
+            <img src="assets/home6.jpg" alt="Real Estate" class="img-fluid" />
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Bootstrap JS -->
     <script
