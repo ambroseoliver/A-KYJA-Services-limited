@@ -73,12 +73,27 @@
 }
 
 /* Hero section styles   */
+/* Hero Section with Fade In Effect */
 .hero-section {
   background-image: url("assets/home7.jpg");
   background-size: cover;
   background-position: center;
   padding: 100px 0;
   color: white;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .hero-section .container {
@@ -95,4 +110,149 @@
 
 .hero-section .btn:hover {
   transform: scale(1.1);
+}
+
+/* Why Choose Us Section */
+#why-choose-us {
+  position: relative;
+  background: radial-gradient(
+      circle at 50% 50%,
+      rgba(0, 0, 0, 0.6),
+      rgba(255, 255, 255, 0.1)
+    ),
+    url("assets/services-bg.jpg") no-repeat center center;
+  background-size: cover;
+  padding: 100px 0;
+  text-align: center;
+  overflow: hidden;
+  z-index: 1;
+}
+
+#why-choose-us::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
+
+#why-choose-us h2 {
+  font-size: 3rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+  animation: text-fade-in 1s ease-out;
+}
+
+#why-choose-us .intro-text {
+  font-size: 1.25rem;
+  color: #d1d1d1;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 1;
+  animation: text-fade-in 1s ease-out 0.3s;
+}
+
+/* Service Cards */
+#why-choose-us .service-card {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 30px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  transform: translateY(0);
+}
+
+#why-choose-us .service-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.5);
+}
+
+#why-choose-us .service-card i {
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: #ffcc00;
+  transition: transform 0.3s ease;
+}
+
+#why-choose-us .service-card:hover i {
+  transform: scale(1.2);
+  color: #fff;
+}
+
+#why-choose-us .service-card h3 {
+  font-size: 1.6rem;
+  margin: 15px 0;
+  font-weight: 600;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+#why-choose-us .service-card p {
+  color: #d1d1d1;
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+#why-choose-us .service-card p:hover {
+  opacity: 1;
+}
+
+#why-choose-us .service-card .btn {
+  color: #ffcc00;
+  border: 2px solid #ffcc00;
+  padding: 10px 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#why-choose-us .service-card .btn:hover {
+  background-color: #ffcc00;
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #why-choose-us h2 {
+    font-size: 2rem;
+  }
+
+  #why-choose-us .intro-text {
+    font-size: 1rem;
+    margin-bottom: 40px;
+  }
+
+  #why-choose-us .service-card {
+    margin-bottom: 30px;
+  }
+
+  #why-choose-us .service-card i {
+    font-size: 35px;
+  }
+}
+
+/* Animations */
+@keyframes text-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
