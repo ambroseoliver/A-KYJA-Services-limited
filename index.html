@@ -350,6 +350,61 @@
       </div>
     </section>
 
+    <!-- Contact Us Section -->
+    <section id="contact" class="contact-section">
+      <div class="container text-center">
+        <h2 class="display-4 fw-bold" data-aos="fade-up">Contact Us</h2>
+        <p class="lead mb-4" data-aos="fade-up" data-aos-delay="100">
+          Have a question or need assistance? Get in touch with us today.
+        </p>
+        <div class="row">
+          <div class="col-md-6" data-aos="fade-right" data-aos-delay="200">
+            <form action="contact.php" method="post">
+              <div class="mb-3">
+                <input
+                  type="text"
+                  name="name"
+                  class="form-control"
+                  placeholder="Your Name"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  type="email"
+                  name="email"
+                  class="form-control"
+                  placeholder="Your Email"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <textarea
+                  name="message"
+                  class="form-control"
+                  placeholder="Your Message"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-lg">Send</button>
+            </form>
+          </div>
+          <div class="col-md-6" data-aos="fade-left" data-aos-delay="300">
+            <p>
+              <i class="fas fa-map fa-2x"></i> 1234 Main Street, Your City, Your
+              Country
+            </p>
+            <p><i class="fas fa-phone fa-2x"></i> +1234567890</p>
+            <p>
+              <i class="fas fa-envelope fa-2x"></i>
+              <a href="mailto:  [email protected]"> [email protected]</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Bootstrap JS -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
