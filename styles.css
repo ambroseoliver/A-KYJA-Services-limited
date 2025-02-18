@@ -1,0 +1,98 @@
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Navbar Styling */
+.navbar {
+  background-color: #333; /* Dark background for the navbar */
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-brand img {
+  height: 40px; /* Adjust logo size */
+  width: auto;
+}
+
+.navbar-toggler {
+  border: none;
+  background-color: transparent;
+}
+
+.navbar-toggler-icon {
+  background-color: #fff; /* White icon for better visibility */
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.navbar-nav .nav-item {
+  margin-left: 20px;
+}
+
+.navbar-nav .nav-link {
+  color: #fff;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 8px 12px;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #00bcd4;
+}
+
+.navbar-nav .nav-link.active {
+  color: #00bcd4;
+}
+
+/* Mobile styles */
+@media (max-width: 992px) {
+  .navbar-nav {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+  }
+
+  .navbar-nav .nav-item {
+    margin-left: 0;
+    margin-bottom: 15px;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 1.2rem;
+  }
+}
+
+/* Hero section styles   */
+.hero-section {
+  background-image: url("assets/home7.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 100px 0;
+  color: white;
+}
+
+.hero-section .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full-screen height */
+}
+
+.hero-section .btn {
+  transition: all 0.3s ease;
+}
+
+.hero-section .btn:hover {
+  transform: scale(1.1);
+}
