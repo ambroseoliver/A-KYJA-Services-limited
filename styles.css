@@ -256,3 +256,91 @@
     transform: translateY(0);
   }
 }
+
+/* General Styles  For Our Services section*/
+.services-section {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #fff;
+  padding: 80px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.services-section h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #38bdf8;
+}
+
+.services-section p.lead {
+  color: #94a3b8;
+  font-size: 1.2rem;
+  margin-bottom: 50px;
+}
+
+/* Service Cards */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.col-md-4 {
+  flex: 1 1 30%;
+  min-width: 280px;
+  text-align: center;
+  padding: 20px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.col-md-4::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 150px;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.col-md-4:hover::before {
+  transform: scale(2);
+}
+
+.col-md-4:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Icon Styles */
+.col-md-4 i {
+  color: #38bdf8;
+  font-size: 3rem;
+  transition: color 0.3s ease;
+}
+
+.col-md-4:hover i {
+  color: #facc15;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .services-section h2 {
+    font-size: 2.5rem;
+  }
+  .col-md-4 {
+    flex: 1 1 100%;
+    min-width: unset;
+  }
+}
