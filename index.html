@@ -356,58 +356,80 @@
 
     <!-- Contact Us Section -->
     <section id="contact" class="contact-section">
-      <div class="container text-center">
-        <h2 class="display-4 fw-bold" data-aos="fade-up">Contact Us</h2>
-        <p class="lead mb-4" data-aos="fade-up" data-aos-delay="100">
-          Have a question or need assistance? Get in touch with us today.
-        </p>
-        <div class="row">
-          <div class="col-md-6" data-aos="fade-right" data-aos-delay="200">
+      <div class="container">
+        <div class="contact-wrapper">
+          <!-- Left Side: Contact Form -->
+          <div class="contact-form" data-aos="fade-right">
+            <h2>Contact Us</h2>
+            <p>
+              Have a question or need assistance? Get in touch with us today.
+            </p>
             <form action="contact.php" method="post">
-              <div class="mb-3">
+              <div class="input-group">
                 <input
                   type="text"
                   name="name"
-                  class="form-control"
                   placeholder="Your Name"
                   required
                 />
               </div>
-              <div class="mb-3">
+              <div class="input-group">
                 <input
                   type="email"
                   name="email"
-                  class="form-control"
                   placeholder="Your Email"
                   required
                 />
               </div>
-              <div class="mb-3">
+              <div class="input-group">
                 <textarea
                   name="message"
-                  class="form-control"
                   placeholder="Your Message"
                   rows="5"
                   required
                 ></textarea>
               </div>
-              <button type="submit" class="btn btn-primary btn-lg">Send</button>
+              <button type="submit" class="btn-submit">Send Message</button>
             </form>
           </div>
-          <div class="col-md-6" data-aos="fade-left" data-aos-delay="300">
-            <p>
-              <i class="fas fa-map fa-2x"></i> 1234 Main Street, Your City, Your
-              Country
-            </p>
-            <p><i class="fas fa-phone fa-2x"></i> +1234567890</p>
-            <p>
-              <i class="fas fa-envelope fa-2x"></i>
-              <a href="mailto:  [email protected]"> [email protected]</a>
-            </p>
+
+          <!-- Right Side: Contact Info & Map -->
+          <div class="contact-info" data-aos="fade-left">
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <p>1234 Main Street, Your City, Your Country</p>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-phone"></i>
+              <p>+123 456 7890</p>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-envelope"></i>
+              <p>
+                <a href="mailto:info@yourcompany.com">info@yourcompany.com</a>
+              </p>
+            </div>
+
+            <!-- Google Map Embed -->
+            <div id="map"></div>
+
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Google Maps API -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+      async
+      defer
+    ></script>
 
     <!-- Bootstrap JS -->
     <script
