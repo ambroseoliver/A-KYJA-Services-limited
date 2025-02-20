@@ -141,3 +141,25 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// Footer section 
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("newsletter-form");
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    const email = form.querySelector("input").value;
+
+    if (validateEmail(email)) {
+      alert("Thank you for subscribing!");
+      form.reset();
+    } else {
+      alert("Please enter a valid email address.");
+    }
+  });
+
+  function validateEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+});
+
+
