@@ -61,6 +61,28 @@ document.querySelectorAll('.col-md-4').forEach((card) => {
   });
 });
 
+
+// Property section 
+document.addEventListener("DOMContentLoaded", function () {
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const propertyCards = document.querySelectorAll(".property-card");
+
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const filterValue = button.getAttribute("data-filter");
+
+      propertyCards.forEach((card) => {
+        if (filterValue === "all" || card.classList.contains(filterValue)) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
+  });
+});
+
+
 // Contact us section js 
 // Initialize Google Maps
 function initMap() {
