@@ -72,44 +72,62 @@
   }
 }
 
-/* Hero section styles   */
 /* Hero Section with Fade In Effect */
 .hero-section {
-  background-image: url("assets/home7.jpg");
-  background-size: cover;
-  background-position: center;
-  padding: 100px 0;
-  color: white;
   position: relative;
-  overflow: hidden;
-  opacity: 0;
-  animation: fadeIn 2s ease-in-out forwards;
-}
-
-/* Fade In Animation */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.hero-section .container {
+  height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Full-screen height */
+  background: url("assets/home7.jpg") no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  overflow: hidden;
 }
-
-.hero-section .btn {
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+}
+h1,
+p,
+a {
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 1.5s ease-in-out;
+}
+#hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+  animation-delay: 0.5s;
+}
+#hero-subtitle {
+  font-size: 1.5rem;
+  animation-delay: 1s;
+}
+#hero-btn {
+  animation-delay: 1.5s;
+  padding: 10px 25px;
+  border-radius: 25px;
   transition: all 0.3s ease;
 }
-
-.hero-section .btn:hover {
+#hero-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
   transform: scale(1.1);
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Why Choose Us Section */

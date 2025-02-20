@@ -8,6 +8,23 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// Hero section 
+document.addEventListener("DOMContentLoaded", () => {
+  const title = document.getElementById("hero-title");
+  const text = title.innerText;
+  title.innerText = "";
+  let i = 0;
+
+  function typeEffect() {
+    if (i < text.length) {
+      title.innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typeEffect, 50);
+    }
+  }
+  typeEffect();
+});
+
 
 // About us section 
 document.querySelector(".btn-learn-more").addEventListener("click", () => {
