@@ -86,3 +86,17 @@ function initMap() {
     title: "Our Location",
   });
 }
+
+// Faqs section 
+document.addEventListener("DOMContentLoaded", function () {
+  const buttons = document.querySelectorAll(".accordion-button");
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      setTimeout(() => {
+        button.scrollIntoView({ behavior: "smooth", block: "center" });
+      }, 300);
+    });
+  });
+});
+
