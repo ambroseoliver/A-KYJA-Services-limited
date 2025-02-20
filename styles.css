@@ -494,6 +494,56 @@ a {
   background-color: #0056b3;
 }
 
+/* Property Management Section */
+.property-management-section {
+  padding: 80px 0;
+  background-color: #f8f9fa;
+}
+
+.management-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.management-card:hover {
+  transform: translateY(-5px);
+}
+
+.management-icon {
+  font-size: 40px;
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+.management-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.management-text {
+  font-size: 16px;
+  color: #777;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
 /* Contact Section */
 .contact-section {
   background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
