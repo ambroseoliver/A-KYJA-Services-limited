@@ -8,6 +8,21 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// Navigation Bar  script
+window.addEventListener("scroll", function () {
+  const navbar = document.querySelector(".navbar");
+  if (window.scrollY > 50) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+  }
+});
+
+document.getElementById("mobile-menu").addEventListener("click", function () {
+  document.getElementById("navbarNav").classList.toggle("show");
+});
+
+
 // Hero section 
 document.addEventListener("DOMContentLoaded", () => {
   const title = document.getElementById("hero-title");
