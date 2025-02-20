@@ -87,6 +87,27 @@ function initMap() {
   });
 }
 
+// Blog section 
+document.addEventListener("DOMContentLoaded", function () {
+  // Lazy Load Images
+  const lazyImages = document.querySelectorAll(".lazyload");
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.src = entry.target.dataset.src;
+          entry.target.classList.remove("lazyload");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+
+  lazyImages.forEach((img) => observer.observe(img));
+});
+
+
 // Faqs section 
 document.addEventListener("DOMContentLoaded", function () {
   const buttons = document.querySelectorAll(".accordion-button");
