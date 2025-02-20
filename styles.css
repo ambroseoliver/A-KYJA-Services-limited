@@ -702,6 +702,128 @@ a {
   }
 }
 
+/* Team Section Styling */
+.team-section {
+  background: #f8f9fa;
+  padding: 80px 0;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.team-member {
+  text-align: center;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.team-member:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.team-img {
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 15px;
+}
+
+.team-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease-in-out;
+  border-radius: 50%;
+}
+
+.team-member:hover .team-img img {
+  transform: scale(1.1);
+}
+
+.team-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 123, 255, 0.8);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 50%;
+}
+
+.team-member:hover .team-overlay {
+  opacity: 1;
+}
+
+.team-name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.team-title {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.social-icons a {
+  color: #007bff;
+  font-size: 1.2rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+  color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .team-name {
+    font-size: 1.2rem;
+  }
+
+  .team-title {
+    font-size: 0.9rem;
+  }
+
+  .team-member {
+    margin-bottom: 30px;
+  }
+}
+
 /* Faq Section  */
 .faq-section {
   background: #f8f9fa;
