@@ -103,6 +103,16 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// Our process section 
+document.addEventListener("DOMContentLoaded", function () {
+  const getStartedBtn = document.querySelector(".btn-primary");
+
+  getStartedBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    document.querySelector("#contact").scrollIntoView({ behavior: "smooth" });
+  });
+});
+
 
 
 // Contact us section js 
