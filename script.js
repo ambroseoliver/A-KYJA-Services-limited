@@ -245,5 +245,42 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// Whatsup floating button 
+document.addEventListener("DOMContentLoaded", function () {
+  const whatsappBtn = document.getElementById("whatsapp-btn");
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 200) {
+      whatsappBtn.style.display = "flex";
+    } else {
+      whatsappBtn.style.display = "none";
+    }
+  });
+});
+
+
+
+// Back to top button 
+document.addEventListener("DOMContentLoaded", function () {
+  const backToTopButton = document.getElementById("back-to-top");
+
+  // Show button when scrolling down
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 300) {
+      backToTopButton.classList.add("show");
+    } else {
+      backToTopButton.classList.remove("show");
+    }
+  });
+
+  // Scroll to top when button is clicked
+  backToTopButton.addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+});
+
 
 
