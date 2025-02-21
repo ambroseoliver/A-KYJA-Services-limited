@@ -207,3 +207,43 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+// Live chat widget section 
+document.addEventListener("DOMContentLoaded", function () {
+  const chatToggle = document.getElementById("chat-toggle");
+  const chatBox = document.getElementById("chat-box");
+  const closeChat = document.getElementById("close-chat");
+  const sendMessage = document.getElementById("send-message");
+  const chatInput = document.getElementById("chat-input");
+  const chatBody = document.querySelector(".chat-body");
+
+  // Open chat
+  chatToggle.addEventListener("click", function () {
+    chatBox.style.display = "flex";
+  });
+
+  // Close chat
+  closeChat.addEventListener("click", function () {
+    chatBox.style.display = "none";
+  });
+
+  // Send message
+  sendMessage.addEventListener("click", function () {
+    if (chatInput.value.trim() !== "") {
+      let userMessage = document.createElement("p");
+      userMessage.classList.add("chat-message");
+      userMessage.textContent = chatInput.value;
+      chatBody.appendChild(userMessage);
+      chatInput.value = "";
+    }
+  });
+
+  // Send message on Enter key press
+  chatInput.addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+      sendMessage.click();
+    }
+  });
+});
+
+
+
