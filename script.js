@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Navigation Bar  script
+// Navbar Scroll Effect
 window.addEventListener("scroll", function () {
   const navbar = document.querySelector(".navbar");
   if (window.scrollY > 50) {
@@ -18,12 +18,12 @@ window.addEventListener("scroll", function () {
   }
 });
 
+// Mobile Menu Toggle
 document.getElementById("mobile-menu").addEventListener("click", function () {
   document.getElementById("navbarNav").classList.toggle("show");
 });
 
-
-// Hero section 
+// Hero Section Typewriter Effect
 document.addEventListener("DOMContentLoaded", () => {
   const title = document.getElementById("hero-title");
   const text = title.innerText;
@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   typeEffect();
 });
+
 
 
 // About us section 

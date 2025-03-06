@@ -1,27 +1,25 @@
 /* Global styles */
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 /* Navbar Styling */
 .navbar {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
 }
 .navbar.scrolled {
   background: rgba(0, 0, 0, 0.8);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-.navbar-brand .logo {
-  max-width: 150px;
-  height: auto;
-}
-@media (max-width: 768px) {
-  .navbar-brand .logo {
-    max-width: 120px;
-  }
 }
 .nav-link {
   color: white;
@@ -53,35 +51,41 @@
   background: white;
   color: black;
 }
-@media (max-width: 992px) {
-  .collapse {
-    background: rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    border-radius: 10px;
-  }
-}
 
-/* Hero Section with Fade In Effect */
+/* Hero Section */
 .hero-section {
   position: relative;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("assets/home7.jpg") no-repeat center center/cover;
+  text-align: left;
   color: white;
-  text-align: center;
   overflow: hidden;
 }
+
+/* Background Video */
+#hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(40%) blur(3px);
+}
+
+/* Dark Overlay */
 .hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(5px);
+  background: rgba(0, 0, 0, 0.3);
 }
+
+/* Hero Text */
 h1,
 p,
 a {
@@ -96,6 +100,7 @@ a {
 }
 #hero-subtitle {
   font-size: 1.5rem;
+  max-width: 600px;
   animation-delay: 1s;
 }
 #hero-btn {
@@ -108,6 +113,8 @@ a {
   background: rgba(255, 255, 255, 0.3);
   transform: scale(1.1);
 }
+
+/* Animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -116,6 +123,16 @@ a {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .hero-section {
+    text-align: center;
+  }
+  #hero-subtitle {
+    max-width: 100%;
   }
 }
 
