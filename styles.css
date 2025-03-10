@@ -1448,7 +1448,7 @@ a {
 #back-to-top {
   position: fixed;
   bottom: 20px;
-  right: 20px;
+  right: 80px; /* Move left to avoid overlap with chat button */
   width: 50px;
   height: 50px;
   background: #007bff;
@@ -1473,10 +1473,12 @@ a {
   opacity: 1;
 }
 
+/* Adjust for smaller screens */
 @media (max-width: 768px) {
   #back-to-top {
     width: 40px;
     height: 40px;
     font-size: 18px;
+    right: 70px; /* Move left on mobile too */
   }
 }
