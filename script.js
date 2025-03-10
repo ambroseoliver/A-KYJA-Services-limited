@@ -84,8 +84,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
-// Property management section 
+// Our property management section 
+// Smooth Scroll for Links
 document.addEventListener("DOMContentLoaded", function () {
   const scrollLinks = document.querySelectorAll('a[href^="#"]');
 
@@ -104,6 +104,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// Hover Effect for 3D Depth
+document.querySelectorAll(".management-card").forEach((card) => {
+  card.addEventListener("mousemove", (e) => {
+    let x = (e.offsetX / card.offsetWidth) * 30 - 15;
+    let y = (e.offsetY / card.offsetHeight) * 30 - 15;
+    card.style.transform = `rotateX(${y}deg) rotateY(${x}deg) scale(1.05)`;
+  });
+
+  card.addEventListener("mouseleave", () => {
+    card.style.transform = "rotateX(0deg) rotateY(0deg) scale(1)";
+  });
+});
+
 
 // Our process section 
 document.addEventListener("DOMContentLoaded", function () {

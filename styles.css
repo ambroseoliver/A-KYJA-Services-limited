@@ -491,53 +491,105 @@ a {
 
 /* Property Management Section */
 .property-management-section {
-  padding: 80px 0;
+  padding: 100px 20px;
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
   color: #fff;
+  text-align: center;
 }
 
+.section-title {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #f8fafc;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: #cbd5e1;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+  line-height: 1.6;
+}
+
+/* Grid Layout */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  justify-content: center;
+}
+
+/* Management Cards */
 .management-card {
-  background: #fff;
-  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
   padding: 30px;
+  border-radius: 15px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
   text-align: center;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
 }
 
 .management-card:hover {
-  transform: translateY(-5px);
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
+/* Icons */
 .management-icon {
-  font-size: 40px;
-  color: #007bff;
-  margin-bottom: 15px;
+  font-size: 3rem;
+  color: #38bdf8;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
+.management-card:hover .management-icon {
+  color: #facc15;
+  transform: rotateY(180deg);
+}
+
+/* Titles & Text */
 .management-title {
-  font-size: 20px;
+  font-size: 1.6rem;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-top: 15px;
+  color: #f1f5f9;
 }
 
 .management-text {
-  font-size: 16px;
-  color: #777;
+  font-size: 1rem;
+  color: #cbd5e1;
+  margin-top: 10px;
+  line-height: 1.5;
 }
 
+/* Call to Action Button */
 .btn-primary {
-  background-color: #007bff;
+  display: inline-block;
+  background-color: #38bdf8;
   color: #fff;
-  padding: 12px 20px;
+  padding: 12px 24px;
   border-radius: 8px;
   font-weight: bold;
+  font-size: 1.1rem;
   text-decoration: none;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
 .btn-primary:hover {
-  background-color: #0056b3;
+  background-color: #facc15;
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.2rem;
+  }
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  }
 }
 
 /* Our Process Section */
