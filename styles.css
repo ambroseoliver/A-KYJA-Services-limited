@@ -136,6 +136,91 @@ a {
   }
 }
 
+/* About Us Section */
+.about-section {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  color: #fff;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container for video and text */
+.about-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  gap: 50px;
+}
+
+/* Left Side - Video */
+.about-video {
+  flex: 1;
+  max-width: 50%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.about-video video {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.about-video video:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Right Side - Text */
+.about-content {
+  flex: 1;
+  max-width: 50%;
+}
+
+.about-content p {
+  font-size: 1.2rem;
+  color: #94a3b8;
+}
+
+/* Button */
+.btn-learn-more {
+  margin-top: 15px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  color: #fff;
+  background: #38bdf8;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn-learn-more:hover {
+  background: #facc15;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .about-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-video,
+  .about-content {
+    max-width: 100%;
+  }
+}
+
 /* Why Choose Us Section */
 #why-choose-us {
   position: relative;
@@ -144,7 +229,7 @@ a {
       rgba(0, 0, 0, 0.6),
       rgba(255, 255, 255, 0.1)
     ),
-    url("assets/services-bg.jpg") no-repeat center center;
+    url("assets/home5.jpg") no-repeat center center;
   background-size: cover;
   padding: 100px 0;
   text-align: center;
@@ -278,85 +363,6 @@ a {
   100% {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-/* About Us Section */
-.about-section {
-  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-  color: #fff;
-  padding: 80px 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Container for image and text */
-.about-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1200px;
-  width: 100%;
-  gap: 50px;
-}
-
-/* Left Side - Image */
-.about-image {
-  flex: 1;
-  max-width: 50%;
-}
-
-.about-image img {
-  width: 100%;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease;
-}
-
-.about-image img:hover {
-  transform: scale(1.05);
-}
-
-/* Right Side - Text */
-.about-content {
-  flex: 1;
-  max-width: 50%;
-}
-
-.about-content p {
-  font-size: 1.2rem;
-  color: #94a3b8;
-}
-
-/* Button */
-.btn-learn-more {
-  margin-top: 15px;
-  padding: 12px 24px;
-  font-size: 1rem;
-  color: #fff;
-  background: #38bdf8;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.3s ease;
-}
-
-.btn-learn-more:hover {
-  background: #facc15;
-  transform: scale(1.05);
-}
-
-/* Responsive Design */
-@media (max-width: 992px) {
-  .about-wrapper {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .about-image,
-  .about-content {
-    max-width: 100%;
   }
 }
 
