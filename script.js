@@ -166,25 +166,15 @@ function initMap() {
   });
 }
 
-// Blog section 
 document.addEventListener("DOMContentLoaded", function () {
-  // Lazy Load Images
-  const lazyImages = document.querySelectorAll(".lazyload");
-  const observer = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.src = entry.target.dataset.src;
-          entry.target.classList.remove("lazyload");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.3 }
-  );
+  const lazyVideos = document.querySelectorAll(".lazyload");
 
-  lazyImages.forEach((img) => observer.observe(img));
+  lazyVideos.forEach((video) => {
+    video.setAttribute("src", video.querySelector("source").getAttribute("src"));
+    video.load();
+  });
 });
+
 
 // Team Section 
 document.addEventListener("DOMContentLoaded", function () {
