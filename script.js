@@ -20,8 +20,17 @@ window.addEventListener("scroll", function () {
 
 // Mobile Menu Toggle
 document.getElementById("mobile-menu").addEventListener("click", function () {
-  document.getElementById("navbarNav").classList.toggle("show");
+  const navMenu = document.getElementById("navbarNav");
+  navMenu.classList.toggle("show");
+
+  // Close menu when a link is clicked (for mobile users)
+  document.querySelectorAll(".nav-link").forEach((link) => {
+    link.addEventListener("click", function () {
+      navMenu.classList.remove("show");
+    });
+  });
 });
+
 
 // Hero Section Typewriter Effect
 document.addEventListener("DOMContentLoaded", () => {

@@ -15,40 +15,83 @@
 .navbar {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
+  padding: 15px 0;
+  height: auto;
 }
+
+/* Navbar when scrolled */
 .navbar.scrolled {
   background: rgba(0, 0, 0, 0.8);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-.nav-link {
-  color: white;
-  transition: 0.3s;
+
+/* Navbar Brand (Logo) */
+.navbar-brand img {
+  width: 70px; /* Increase logo size */
+  height: auto;
+  filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.5)); /* Adds visibility */
 }
+
+/* Navbar Links */
+.nav-link {
+  color: white !important;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+  padding: 8px 15px;
+}
+
 .nav-link:hover {
-  color: #ffcc00;
+  color: #ffcc00 !important;
   transform: scale(1.1);
 }
+
+/* Mobile Menu Button (Toggler) */
+.navbar-toggler {
+  border: none !important;
+  background: none !important;
+  outline: none !important;
+}
+
+.navbar-toggler-icon {
+  filter: invert(1); /* Makes it white */
+  width: 30px !important;
+  height: 30px !important;
+}
+
+/* Mobile Menu Styling */
+@media (max-width: 992px) {
+  .navbar-nav {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .nav-link {
+    display: block;
+    text-align: center;
+    padding: 10px;
+  }
+}
+
+/* Buttons */
 .btn-login,
 .btn-register {
-  padding: 5px 15px;
+  padding: 8px 18px;
   border-radius: 20px;
+  font-size: 0.9rem;
   transition: all 0.3s;
 }
+
 .btn-login {
   background: transparent;
   border: 1px solid white;
+  color: white;
 }
+
 .btn-register {
   background: #ffcc00;
-  color: black;
-}
-.btn-login:hover {
-  background: white;
-  color: black;
-}
-.btn-register:hover {
-  background: white;
   color: black;
 }
 
