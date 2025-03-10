@@ -1274,78 +1274,143 @@ a {
   z-index: 1000;
 }
 
+/* Floating Chat Button */
 .chat-button {
-  background: #007bff;
+  background: linear-gradient(135deg, #007bff, #0056b3);
   color: white;
   font-size: 22px;
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
   cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
 }
 
 .chat-button:hover {
-  transform: scale(1.1);
+  transform: scale(1.15);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 }
 
+/* Chat Box */
 .chat-box {
   position: fixed;
   bottom: 80px;
   right: 20px;
-  width: 300px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  width: 320px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   display: none;
   flex-direction: column;
+  animation: fadeIn 0.3s ease-in-out;
 }
 
+/* Chat Header */
 .chat-header {
-  background: #007bff;
+  background: linear-gradient(135deg, #007bff, #0056b3);
   color: white;
-  padding: 10px;
-  text-align: center;
+  padding: 12px;
   font-size: 16px;
-  border-radius: 10px 10px 0 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  border-radius: 12px 12px 0 0;
 }
 
 #close-chat {
   cursor: pointer;
   font-size: 20px;
+  font-weight: bold;
 }
 
+/* Chat Body */
 .chat-body {
   padding: 15px;
-  font-size: 14px;
-  color: #333;
+  max-height: 250px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
+/* Chat Messages */
+.chat-message {
+  padding: 10px 15px;
+  border-radius: 15px;
+  max-width: 80%;
+  word-wrap: break-word;
+  font-size: 14px;
+}
+
+.bot-message {
+  background: #e1f5fe;
+  align-self: flex-start;
+}
+
+.user-message {
+  background: #007bff;
+  color: white;
+  align-self: flex-end;
+}
+
+/* Chat Footer */
 .chat-footer {
   display: flex;
   padding: 10px;
   border-top: 1px solid #ddd;
+  background: white;
+  border-radius: 0 0 12px 12px;
 }
 
 #chat-input {
   flex: 1;
-  padding: 8px;
+  padding: 10px;
   border: none;
   outline: none;
+  font-size: 14px;
+  border-radius: 8px;
+  background: #f1f1f1;
 }
 
 #send-message {
   background: #007bff;
   color: white;
   border: none;
-  padding: 8px;
+  padding: 10px;
+  margin-left: 8px;
+  border-radius: 8px;
   cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease-in-out;
+}
+
+#send-message:hover {
+  background: #0056b3;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .chat-box {
+    width: 90%;
+    right: 5%;
+  }
 }
 
 /* WhatsApp Floating Button */

@@ -233,32 +233,40 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// Live chat widget section 
 document.addEventListener("DOMContentLoaded", function () {
   const chatToggle = document.getElementById("chat-toggle");
   const chatBox = document.getElementById("chat-box");
   const closeChat = document.getElementById("close-chat");
   const sendMessage = document.getElementById("send-message");
   const chatInput = document.getElementById("chat-input");
-  const chatBody = document.querySelector(".chat-body");
+  const chatBody = document.getElementById("chat-body");
 
-  // Open chat
+  // Open chat with animation
   chatToggle.addEventListener("click", function () {
     chatBox.style.display = "flex";
+    setTimeout(() => {
+      chatBox.style.opacity = "1";
+      chatBox.style.transform = "translateY(0)";
+    }, 100);
   });
 
   // Close chat
   closeChat.addEventListener("click", function () {
-    chatBox.style.display = "none";
+    chatBox.style.opacity = "0";
+    chatBox.style.transform = "translateY(10px)";
+    setTimeout(() => {
+      chatBox.style.display = "none";
+    }, 300);
   });
 
   // Send message
   sendMessage.addEventListener("click", function () {
     if (chatInput.value.trim() !== "") {
-      let userMessage = document.createElement("p");
-      userMessage.classList.add("chat-message");
+      let userMessage = document.createElement("div");
+      userMessage.classList.add("chat-message", "user-message");
       userMessage.textContent = chatInput.value;
       chatBody.appendChild(userMessage);
+      chatBody.scrollTop = chatBody.scrollHeight; // Auto-scroll to the latest message
       chatInput.value = "";
     }
   });
@@ -270,6 +278,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
 
 // Whatsup floating button 
 document.addEventListener("DOMContentLoaded", function () {
