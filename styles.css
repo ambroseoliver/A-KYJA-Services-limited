@@ -366,7 +366,7 @@ a {
   }
 }
 
-/* Services Section */
+/* Our Services Section */
 .services-section {
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
   color: #fff;
@@ -492,7 +492,8 @@ a {
 /* Property Management Section */
 .property-management-section {
   padding: 80px 0;
-  background-color: #f8f9fa;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #fff;
 }
 
 .management-card {
@@ -879,7 +880,8 @@ a {
 
 /* Team Section Styling */
 .team-section {
-  background: #f8f9fa;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #ffff;
   padding: 80px 0;
 }
 
