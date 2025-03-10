@@ -366,91 +366,63 @@ a {
   }
 }
 
-/* General Styles  For Our Services section*/
+/* Services Section */
 .services-section {
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
   color: #fff;
   padding: 80px 20px;
-  position: relative;
-  overflow: hidden;
-}
-
-.services-section h2 {
-  font-size: 3rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #38bdf8;
-}
-
-.services-section p.lead {
-  color: #94a3b8;
-  font-size: 1.2rem;
-  margin-bottom: 50px;
-}
-
-/* Service Cards */
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-.col-md-4 {
-  flex: 1 1 30%;
-  min-width: 280px;
   text-align: center;
-  padding: 20px;
-  border-radius: 15px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+
+.service-card {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  padding: 30px;
+  border-radius: 15px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
+  text-align: center;
 }
 
-.col-md-4::before {
-  content: "";
-  position: absolute;
-  top: -50px;
-  left: -50px;
-  width: 150px;
-  height: 150px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  transition: transform 0.3s ease;
-}
-
-.col-md-4:hover::before {
-  transform: scale(2);
-}
-
-.col-md-4:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-}
-
-/* Icon Styles */
-.col-md-4 i {
-  color: #38bdf8;
+.service-card i {
   font-size: 3rem;
-  transition: color 0.3s ease;
+  color: #38bdf8;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.col-md-4:hover i {
+.service-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.service-card:hover i {
   color: #facc15;
+  transform: rotateY(180deg);
 }
 
-/* Responsive Design */
+.service-card h3 {
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+.service-card p {
+  font-size: 1rem;
+  color: #94a3b8;
+  margin-top: 10px;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  .services-section h2 {
-    font-size: 2.5rem;
-  }
-  .col-md-4 {
-    flex: 1 1 100%;
-    min-width: unset;
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
   }
 }
 

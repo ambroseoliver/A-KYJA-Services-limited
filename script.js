@@ -48,20 +48,20 @@ document.querySelector(".btn-learn-more").addEventListener("click", () => {
 });
 
 
-
-// Our services section 
-/* JavaScript Interactions */
-document.querySelectorAll('.col-md-4').forEach((card) => {
-  card.addEventListener('mousemove', (e) => {
+// Services section
+// 3D Hover Effect
+document.querySelectorAll(".service-card").forEach((card) => {
+  card.addEventListener("mousemove", (e) => {
     let x = (e.offsetX / card.offsetWidth) * 30 - 15;
     let y = (e.offsetY / card.offsetHeight) * 30 - 15;
-    card.style.transform = `rotateX(${y}deg) rotateY(${x}deg)`;
+    card.style.transform = `rotateX(${y}deg) rotateY(${x}deg) scale(1.05)`;
   });
 
-  card.addEventListener('mouseleave', () => {
-    card.style.transform = 'rotateX(0deg) rotateY(0deg)';
+  card.addEventListener("mouseleave", () => {
+    card.style.transform = "rotateX(0deg) rotateY(0deg) scale(1)";
   });
 });
+
 
 
 // Property section 
