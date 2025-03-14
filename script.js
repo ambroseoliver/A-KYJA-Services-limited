@@ -231,6 +231,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+// Chat widget 
 
 document.addEventListener("DOMContentLoaded", function () {
   const chatToggle = document.getElementById("chat-toggle");
