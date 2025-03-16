@@ -210,6 +210,28 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// Email js lib 
+document.addEventListener("DOMContentLoaded", function () {
+  emailjs.init("0TLwlQN6WQHA04wtS"); // Replace with your EmailJS User ID
+
+  document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent default form submission
+
+    let formData = {
+      name: document.querySelector("input[name='name']").value,
+      email: document.querySelector("input[name='email']").value,
+      message: document.querySelector("textarea[name='message']").value
+    };
+
+    emailjs.send("service_rboe2gb", "template_b5trmbs", formData)
+      .then(response => {
+        alert("Message sent successfully!");
+        document.getElementById("contactForm").reset(); // Clear form after submission
+      })
+      .catch(error => console.error("Error:", error));
+  });
+});
+
 // Footer section 
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("newsletter-form");

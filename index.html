@@ -564,62 +564,60 @@
     </section>
 
     <!-- Contact Us Section -->
-    <section id="contact" class="contact-section">
-      <div class="container">
-        <div class="contact-wrapper">
-          <!-- Left Side: Contact Form -->
-          <div class="contact-form" data-aos="fade-right">
-            <h2>Contact Us</h2>
-            <p>
-              Have a question or need assistance? Get in touch with us today.
-            </p>
-            <form action="contact.php" method="post">
-              <div class="input-group">
-                <input type="text" name="name" placeholder="Your Name" required />
-              </div>
-              <div class="input-group">
-                <input type="email" name="email" placeholder="Your Email" required />
-              </div>
-              <div class="input-group">
-                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-              </div>
-              <button type="submit" class="btn-submit">Send Message</button>
-            </form>
-            
-          </div>
+<section id="contact" class="contact-section">
+  <div class="container">
+    <div class="contact-wrapper">
+      <!-- Left Side: Contact Form -->
+      <div class="contact-form" data-aos="fade-right">
+        <h2>Contact Us</h2>
+        <p>
+          Have a question or need assistance? Get in touch with us today.
+        </p>
+       <!-- Updated Contact Form -->
+<form id="contactForm">
+  <div class="input-group">
+    <input type="text" name="name" placeholder="Your Name" required />
+  </div>
+  <div class="input-group">
+    <input type="email" name="email" placeholder="Your Email" required />
+  </div>
+  <div class="input-group">
+    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+  </div>
+  <button type="submit" class="btn-submit">Send Message</button>
+</form>
+      </div>
 
-          <!-- Right Side: Contact Info & Map -->
-          <div class="contact-info" data-aos="fade-left">
-            <div class="info-item">
-              <i class="fas fa-map-marker-alt"></i>
-              <p>Nairobi ,Kenya</p>
-            </div>
-            <div class="info-item">
-              <i class="fas fa-phone"></i>
-              <p>+254719525048</p>
-            </div>
-            <div class="info-item">
-              <i class="fas fa-envelope"></i>
-              <p>
-                <a href="mailto:akejaserviceslimited@gmail.com "
-                  >akejaserviceslimited@gmail.com</a
-                >
-              </p>
-            </div>
+      <!-- Right Side: Contact Info & Map -->
+      <div class="contact-info" data-aos="fade-left">
+        <div class="info-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <p>Nairobi, Kenya</p>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-phone"></i>
+          <p>+254719525048</p>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-envelope"></i>
+          <p>
+            <a href="mailto:akejaserviceslimited@gmail.com">akejaserviceslimited@gmail.com</a>
+          </p>
+        </div>
 
-            <!-- Google Map Embed -->
-            <div id="map"></div>
+        <!-- Google Map Embed -->
+        <div id="map"></div>
 
-            <div class="social-icons">
-              <a href="#"><i class="fab fa-facebook"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-linkedin"></i></a>
-            </div>
-          </div>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
     <!-- Google Maps API -->
     <script
@@ -1083,7 +1081,11 @@
       gsap.from("h1", { opacity: 0, y: -50, duration: 1 });
     </script>
 
+    <!-- Include EmailJS JavaScript Library -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
     <!-- Custom JS -->
     <script src="script.js"></script>
+
   </body>
 </html>

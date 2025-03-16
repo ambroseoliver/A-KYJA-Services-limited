@@ -3,45 +3,52 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'vendor/autoload.php'; // Load PHPMailer (if using Composer)
+require 'vendor/autoload.php'; // If using Composer
+// require 'path/to/PHPMailer/src/Exception.php';
+// require 'path/to/PHPMailer/src/PHPMailer.php';
+// require 'path/to/PHPMailer/src/SMTP.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $name = htmlspecialchars($_POST["name"]);
   $email = htmlspecialchars($_POST["email"]);
   $message = htmlspecialchars($_POST["message"]);
 
+  if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    echo "Invalid email format";
+    exit();
+  }
+
   $mail = new PHPMailer(true);
 
   try {
-    // Server settings
+    // SMTP Configuration
     $mail->isSMTP();
-    $mail->Host = 'smtp.gmail.com'; // SMTP server
+    $mail->Host = 'smtp.gmail.com'; // Replace with your SMTP host
     $mail->SMTPAuth = true;
-    $mail->Username = 'akejaserviceslimited@gmail.com'; // Replace with your Gmail
-    $mail->Password = ''; // Use App Password (not real password)
+    $mail->Username = 'akejaserviceslimited@gmail.com'; // Your email
+    $mail->Password = 'wnamyarvagyxzwjv '; // Your email password (Use App Password for Gmail)
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    $mail->Port = 465;
+    $mail->Port = 587;
 
-    // Recipients
+    // Email Settings
     $mail->setFrom($email, $name);
-    $mail->addAddress('akejaserviceslimited@gmail.com'); // Recipient email
-    $mail->addReplyTo($email);
+    $mail->addAddress('akejaserviceslimited@gmail.com'); // Change to recipient email
+    $mail->addReplyTo($email, $name);
 
-    // Email content
     $mail->isHTML(true);
-    $mail->Subject = 'New Contact Form Submission';
-    $mail->Body = "<h3>New Message from Website</h3>
-                      <p><strong>Name:</strong> $name</p>
-                      <p><strong>Email:</strong> $email</p>
-                      <p><strong>Message:</strong></p>
-                      <p>$message</p>";
+    $mail->Subject = "New Contact Form Submission";
+    $mail->Body = "<strong>Name:</strong> $name <br> 
+                       <strong>Email:</strong> $email <br> 
+                       <strong>Message:</strong><br> $message";
 
-    $mail->send();
-
-    echo "<script>alert('Message sent successfully!'); window.location.href='success.html';</script>";
+    if ($mail->send()) {
+      echo "Message sent successfully!";
+    } else {
+      echo "Message could not be sent.";
+    }
   } catch (Exception $e) {
-    echo "<script>alert('Message could not be sent. Error: {$mail->ErrorInfo}'); window.history.back();</script>";
+    echo "Mailer Error: " . $mail->ErrorInfo;
   }
 } else {
-  echo "<script>alert('Invalid request.'); window.history.back();</script>";
+  echo "Invalid request";
 }
